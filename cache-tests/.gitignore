@@ -2,3 +2,5 @@
 /.classpath
 /.settings
 /.checkstyle
+/bin
+/test-output

@@ -10,13 +10,13 @@
     </parent>
 
     <groupId>javax.cache</groupId>
-    <artifactId>guice-annotations-test-harness</artifactId>
+    <artifactId>tapestry-ioc-annotations-test-harness</artifactId>
 
     <packaging>jar</packaging>
 
-    <name>Guice Annotations Test Harness</name>
-    <url>https://github.com/micsta/jsr107tck</url>
-    <description>Test harness for Guice annotations RI</description>
+    <name>Tapestry-IoC Annotations Test Harness</name>
+    <url>https://github.com/thiagohp/jsr107tck</url>
+    <description>Test harness for Tapestry-IoC annotations RI</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,13 +31,8 @@
         </dependency>
         <dependency>
             <groupId>org.jsr107.ri</groupId>
-            <artifactId>cache-annotations-ri-guice</artifactId>
+            <artifactId>cache-annotations-ri-tapestry-ioc</artifactId>
             <version>${project.parent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>2.2.2</version>
         </dependency>
     </dependencies>
 

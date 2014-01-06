@@ -6,7 +6,7 @@
     <parent>
         <groupId>javax.cache</groupId>
         <artifactId>tck-parent</artifactId>
-        <version>0.9-SNAPSHOT</version>
+        <version>0.8</version>
     </parent>
 
     <groupId>javax.cache</groupId>
@@ -37,14 +37,12 @@
         <implementation-version>${project.parent.version}</implementation-version>
 
         <annotation-harness-groupId>javax.cache</annotation-harness-groupId>
-        <annotation-harness-artifactId>guice-annotations-test-harness
-        </annotation-harness-artifactId>
+        <annotation-harness-artifactId>tapestry-ioc-annotations-test-harness</annotation-harness-artifactId>
         <!-- 
         <annotation-harness-artifactId>cdi-weld-annotations-test-harness</annotation-harness-artifactId>
         <annotation-harness-artifactId>spring-annotations-test-harness</annotation-harness-artifactId>
         -->
-        <annotation-harness-version>${project.parent.version}
-        </annotation-harness-version>
+        <annotation-harness-version>${project.parent.version}</annotation-harness-version>
 
         <!-- Used by the unwrap tests, leave blank and the tests will be ignored -->
         <CacheManagerImpl>org.jsr107.ri.RICacheManager</CacheManagerImpl>
@@ -134,37 +132,37 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <!--Required because JUnit will not detect tests simply included in a dep-->
-                    <execution>
-                        <id>copy-cache-tests</id>
-                        <goals>
-                            <goal>unpack-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.testOutputDirectory}
-                            </outputDirectory>
-                            <includeArtifactIds>cache-tests</includeArtifactIds>
-                            <includeScope>test</includeScope>
-                            <excludes>**/unwrap.properties</excludes>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>copy-domain</id>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>javax.cache</groupId>
-                                    <artifactId>app-domain</artifactId>
-                                    <version>${project.parent.version}</version>
-                                    <outputDirectory>${domain-lib-dir}
-                                    </outputDirectory>
-                                    <destFileName>${domain-jar}</destFileName>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
+<!--                     <execution> -->
+<!--                         <id>copy-cache-tests</id> -->
+<!--                         <goals> -->
+<!--                             <goal>unpack-dependencies</goal> -->
+<!--                         </goals> -->
+<!--                         <configuration> -->
+<!--                             <outputDirectory>${project.build.testOutputDirectory} -->
+<!--                             </outputDirectory> -->
+<!--                             <includeArtifactIds>cache-tests</includeArtifactIds> -->
+<!--                             <includeScope>test</includeScope> -->
+<!--                             <excludes>**/unwrap.properties</excludes> -->
+<!--                         </configuration> -->
+<!--                     </execution> -->
+<!--                     <execution> -->
+<!--                         <id>copy-domain</id> -->
+<!--                         <goals> -->
+<!--                             <goal>copy</goal> -->
+<!--                         </goals> -->
+<!--                         <configuration> -->
+<!--                             <artifactItems> -->
+<!--                                 <artifactItem> -->
+<!--                                     <groupId>javax.cache</groupId> -->
+<!--                                     <artifactId>app-domain</artifactId> -->
+<!--                                     <version>${project.parent.version}</version> -->
+<!--                                     <outputDirectory>${domain-lib-dir} -->
+<!--                                     </outputDirectory> -->
+<!--                                     <destFileName>${domain-jar}</destFileName> -->
+<!--                                 </artifactItem> -->
+<!--                             </artifactItems> -->
+<!--                         </configuration> -->
+<!--                     </execution> -->
                 </executions>
             </plugin>
 

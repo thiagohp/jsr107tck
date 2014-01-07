@@ -134,7 +134,7 @@
         <profile>
             <id>run_tests_from_ide</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
 
             <dependencies>
@@ -147,7 +147,8 @@
                     <groupId>javax.cache</groupId>
                     <!--<artifactId>spring-annotations-test-harness</artifactId>-->
                     <!--<artifactId>guice-annotations-test-harness</artifactId>-->
-                    <artifactId>cdi-weld-annotations-test-harness</artifactId>
+                    <!--<artifactId>cdi-weld-annotations-test-harness</artifactId>-->
+                    <artifactId>tapestry-ioc-annotations-test-harness</artifactId>
                     <version>${project.parent.version}</version>
                 </dependency>
             </dependencies>

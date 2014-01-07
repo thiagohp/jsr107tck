@@ -33,6 +33,7 @@ import javax.cache.integration.CacheLoaderException;
 import javax.cache.integration.CompletionListener;
 import javax.cache.integration.CompletionListenerFuture;
 import java.io.IOException;
+import java.net.BindException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -80,11 +81,23 @@ public class CacheLoaderTest {
    */
   @Before
   public void onBeforeEachTest() throws IOException {
+    int port = 10000; 
+    cacheLoaderServer = null;
     //establish and open a CacheLoaderServer to handle cache
     //cache loading requests from a CacheLoaderClient
-    cacheLoaderServer = new CacheLoaderServer<String, String>(10000);
-    cacheLoaderServer.open();
-
+    while (port < 65000 && cacheLoaderServer == null) {
+      cacheLoaderServer = null;
+      try {
+        cacheLoaderServer = new CacheLoaderServer<String, String>(port);
+        cacheLoaderServer.open();
+      }
+      catch (BindException e) {
+        cacheLoaderServer.close();
+        cacheLoaderServer = null;
+        port++;
+      }
+    }
+        
     //establish the CacheManager for the tests
     cacheManager = Caching.getCachingProvider().getCacheManager();
 
